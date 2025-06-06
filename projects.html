@@ -1,51 +1,112 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>專案展示 - HiSync</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>專案展示 - HiSync</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 <header>
-    <h1>專案展示</h1>
-    <nav>
-        <a href="index.html">首頁</a> |
-        <a href="about.html">關於我</a> |
-        <a href="skills.html">技術專長</a> |
-        <a href="projects.html">專案展示</a> |
-        <a href="contact.html">聯絡我</a>
-    </nav>
+  <h1>
+    <span data-lang="zh">專案展示</span>
+    <span data-lang="en" style="display: none;">Projects</span>
+  </h1>
+  <!-- 中文導覽列 -->
+  <nav data-lang="zh">
+    <a href="index.html">首頁</a> |
+    <a href="about.html">關於我</a> |
+    <a href="skills.html">技術專長</a> |
+    <a href="projects.html">專案展示</a> |
+    <a href="contact.html">聯絡我</a>
+  </nav>
+
+  <!-- 英文導覽列 -->
+  <nav data-lang="en" style="display:none;">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="skills.html">Skills</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div id="language-switcher" style="position: absolute; top: 10px; right: 20px;">
+    <button onclick="switchLang('zh')">中文</button> |
+    <button onclick="switchLang('en')">EN</button>
+  </div>
 </header>
+
 <main>
-    <section class="project">
-        <h2>多軸手臂控制器</h2>
-        <img src="assets/images/robot-arm.jpg" alt="多軸手臂" class="project-img" />
-        <p>Robot嵌入式控制核心，整合多軸馬達驅動與工業通訊協定，用於智慧製造應用。</p>
-    </section>
-    <section class="project">
-        <h2>2.4GHz Sensor Gateway</h2>
-        <img src="assets/images/sensor-gateway.jpg" alt="Sensor Gateway" class="project-img" />
-        <p>無線感測資料收集閘道，支援多點感測器同步通訊與遠端資料傳輸。</p>
-    </section>
-    <section class="project">
-        <h2>NB-IoT 隨身裝置</h2>
-        <img src="assets/images/nbiot-device.jpg" alt="NB-IoT 裝置" class="project-img" />
-        <p>低功耗行動裝置，搭配 NB-IoT 通訊實現位置追蹤與數據上報功能。</p>
-    </section>
-    <section class="project">
-        <h2>LoRa 長距無線系統</h2>
-        <img src="assets/images/lora-system.jpg" alt="LoRa 系統" class="project-img" />
-        <p>低功耗 LoRa 裝置，用於大範圍環境監控與遠端資料蒐集。</p>
-    </section>
-    <section class="project">
-        <h2>AI 影像辨識應用</h2>
-        <img src="assets/images/ai-vision.jpg" alt="AI Vision" class="project-img" />
-        <p>整合 AI 模型與影像擷取模組，實作邊緣運算平台進行即時人臉或物體辨識。</p>
-    </section>
+  <section class="project">
+    <h2>
+      <span data-lang="zh">多軸手臂控制器</span>
+      <span data-lang="en" style="display: none;">Multi-Axis Robot Arm Controller</span>
+    </h2>
+    <img src="assets/images/robot-arm.jpg" alt="Robot Arm" class="project-img" />
+    <p>
+      <span data-lang="zh">Robot嵌入式控制核心，整合多軸馬達驅動與工業通訊協定，用於智慧製造應用。</span>
+      <span data-lang="en" style="display: none;">Embedded control core for robot arms, integrating multi-axis motor drivers and industrial protocols for smart manufacturing.</span>
+    </p>
+  </section>
+
+  <section class="project">
+    <h2>
+      <span data-lang="zh">2.4GHz Sensor Gateway</span>
+      <span data-lang="en" style="display: none;">2.4GHz Sensor Gateway</span>
+    </h2>
+    <img src="assets/images/sensor-gateway.jpg" alt="Sensor Gateway" class="project-img" />
+    <p>
+      <span data-lang="zh">無線感測資料收集閘道，支援多點感測器同步通訊與遠端資料傳輸。</span>
+      <span data-lang="en" style="display: none;">Wireless sensor gateway supporting synchronized multi-point communication and remote data transfer.</span>
+    </p>
+  </section>
+
+  <section class="project">
+    <h2>
+      <span data-lang="zh">NB-IoT 隨身裝置</span>
+      <span data-lang="en" style="display: none;">NB-IoT Mobile Device</span>
+    </h2>
+    <img src="assets/images/nbiot-device.jpg" alt="NB-IoT Device" class="project-img" />
+    <p>
+      <span data-lang="zh">低功耗行動裝置，搭配 NB-IoT 通訊實現位置追蹤與數據上報功能。</span>
+      <span data-lang="en" style="display: none;">Low-power device using NB-IoT for location tracking and data reporting.</span>
+    </p>
+  </section>
+
+  <section class="project">
+    <h2>
+      <span data-lang="zh">LoRa 長距無線系統</span>
+      <span data-lang="en" style="display: none;">LoRa Long-Range Wireless System</span>
+    </h2>
+    <img src="assets/images/lora-system.jpg" alt="LoRa System" class="project-img" />
+    <p>
+      <span data-lang="zh">低功耗 LoRa 裝置，用於大範圍環境監控與遠端資料蒐集。</span>
+      <span data-lang="en" style="display: none;">Low-power LoRa devices for wide-area environmental monitoring and remote data collection.</span>
+    </p>
+  </section>
+
+  <section class="project">
+    <h2>
+      <span data-lang="zh">AI 影像辨識應用</span>
+      <span data-lang="en" style="display: none;">AI Vision Recognition</span>
+    </h2>
+    <img src="assets/images/ai-vision.jpg" alt="AI Vision" class="project-img" />
+    <p>
+      <span data-lang="zh">整合 AI 模型與影像擷取模組，實作邊緣運算平台進行即時人臉或物體辨識。</span>
+      <span data-lang="en" style="display: none;">Integrated AI models and camera modules for real-time face and object recognition on edge platforms.</span>
+    </p>
+  </section>
 </main>
+
 <footer>
-    <p>© 2025 HiSync</p>
+  <p>© 2025 HiSync</p>
 </footer>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+  });
+}
+</script>
 </body>
 </html>
