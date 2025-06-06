@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>技術專長 - HiSync</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>技術專長 - HiSync</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 <header>
-    <h1>技術專長</h1>
-    <nav>
-        <a href="index.html">首頁</a> |
-        <a href="about.html">關於我</a> |
-        <a href="skills.html">技術專長</a> |
-        <a href="projects.html">專案展示</a> |
-        <a href="contact.html">聯絡我</a>
-    </nav>
+  <h1>
+    <span data-lang="zh">技術專長</span>
+    <span data-lang="en" style="display:none;">Technical Skills</span>
+  </h1>
+  <!-- 中文導覽列 -->
+  <nav data-lang="zh">
+    <a href="index.html">首頁</a> |
+    <a href="about.html">關於我</a> |
+    <a href="skills.html">技術專長</a> |
+    <a href="projects.html">專案展示</a> |
+    <a href="contact.html">聯絡我</a>
+  </nav>
+
+  <!-- 英文導覽列 -->
+  <nav data-lang="en" style="display:none;">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="skills.html">Skills</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- 語言切換按鈕 -->
+  <div id="language-switcher" style="position: absolute; top: 10px; right: 20px;">
+    <button onclick="switchLang('zh')">中文</button> |
+    <button onclick="switchLang('en')">EN</button>
+  </div>
 </header>
+
 <main>
-    <section>
-        <ul>
-            <li>有線／無線嵌入式系統設計</li>
-            <li>工業通訊協議軟體整合</li>
-            <li>軟硬體聯合開發與除錯</li>
-            <li>系統整合與客製化解決方案</li>
-        </ul>
-    </section>
+  <section>
+    <!-- 中文內容 -->
+    <ul data-lang="zh">
+      <li>有線／無線嵌入式系統設計</li>
+      <li>工業通訊協議軟體整合</li>
+      <li>軟硬體聯合開發與除錯</li>
+      <li>系統整合與客製化解決方案</li>
+    </ul>
+
+    <!-- 英文內容 -->
+    <ul data-lang="en" style="display:none;">
+      <li>Wired/Wireless Embedded System Design</li>
+      <li>Industrial Communication Protocol Integration</li>
+      <li>Joint Software-Hardware Development and Debugging</li>
+      <li>System Integration and Customized Solutions</li>
+    </ul>
+  </section>
 </main>
+
 <footer>
-    <p>© 2025 HiSync</p>
+  <p>© 2025 HiSync</p>
 </footer>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+  });
+}
+</script>
 </body>
 </html>
