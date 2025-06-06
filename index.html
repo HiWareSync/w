@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HiSync</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HiSync</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 <header>
-    <h1>HiSync</h1>
-    <p>我們有20多年經驗軟硬體專業工程人員，專精於嵌入式系統及工業通訊。</p>
-    <nav>
-        <a href="index.html">首頁</a> |
-        <a href="about.html">關於我</a> |
-        <a href="skills.html">技術專長</a> |
-        <a href="projects.html">專案展示</a> |
-        <a href="contact.html">聯絡我</a>
-    </nav>
+  <h1>HiSync</h1>
+  <p data-lang="zh">我們有20多年經驗軟硬體專業工程人員，專精於嵌入式系統及工業通訊。</p>
+  <p data-lang="en" style="display:none;">Over 20 years of experience in hardware/software engineering, specialized in embedded systems and industrial communication.</p>
+  
+  <!-- 中文導覽列 -->
+  <nav data-lang="zh">
+    <a href="index.html">首頁</a> |
+    <a href="about.html">關於我</a> |
+    <a href="skills.html">技術專長</a> |
+    <a href="projects.html">專案展示</a> |
+    <a href="contact.html">聯絡我</a>
+  </nav>
+
+  <!-- 英文導覽列 -->
+  <nav data-lang="en" style="display:none;">
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="skills.html">Skills</a> |
+    <a href="projects.html">Projects</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- 語言切換按鈕 -->
+  <div id="language-switcher" style="position: absolute; top: 10px; right: 20px;">
+    <button onclick="switchLang('zh')">中文</button> |
+    <button onclick="switchLang('en')">EN</button>
+  </div>
 </header>
+
 <main>
-    <section>
-        <h2>歡迎來到HiSync</h2>
-        <p>專注於嵌入式系統設計、工業通訊及AI影像辨識，致力於系統整合與客製化解決方案。</p>
-    </section>
+  <section>
+    <h2 data-lang="zh">歡迎來到 HiSync</h2>
+    <h2 data-lang="en" style="display:none;">Welcome to HiSync</h2>
+
+    <p data-lang="zh">專注於嵌入式系統設計、工業通訊及 AI 影像辨識，致力於系統整合與客製化解決方案。</p>
+    <p data-lang="en" style="display:none;">We focus on embedded system design, industrial communication, and AI vision, providing system integration and custom solutions.</p>
+  </section>
 </main>
+
 <footer>
-    <p>© 2025 HiSync</p>
+  <p>© 2025 HiSync</p>
 </footer>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+  });
+}
+</script>
 </body>
 </html>
